@@ -3,9 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simone Lisa | Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme-toggle.css">
+    <script src="lightmode.js" defer></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1>Simone Lisa</h1>
+        <button id="theme-toggle">
+            <img src="images/sun-solid-full.svg">
+            <img src="images/moon-solid-full.svg">
+        </button>
+    </header>
+    <nav class="nav-bar">
+        <ul>
+            <li><a href="index.html">Home<span></span></a></li>
+            <li><a href="projects.html">Projects<span></span></a></li>
+            <li><a href="contact.html">Contact<span></span></a></li>
+        </ul>
+    </nav>
+    <main>
+        <section class="form">
+            <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+                <div class="contact-left">
+                    <h2>Get in touch</h2>
+                    <hr>
+                </div>
+                <input type="hidden" name="access_key" value="516504ec-658e-4f62-b351-655c154a4fb3">
+                <input type="text" name="name" placeholder="Enter your name" class="contact-input" required>
+                <input type="email" name="email" placeholder="Enter your email" class="contact-input" required>
+                <textarea name="message" placeholder="Enter your message" class="contact-input" required></textarea>
+                <button type="submit" id="contact-btn">
+                    <div class="svg-wrapper-1">
+                        <div class="svg-wrapper">
+                            <img src="images/paper-plane-solid-full.svg">
+                        </div>
+                    </div>
+                    <span>Send</span>
+                </button>
+            </form>
+            <div class="contact-right">
+                <img src="images/man-send-message-illustration-svg-download-png-4693182.png">
+            </div>
+        </section>
+    </main>
+    <aside></aside>
+    <hr>
+    <footer class="footer">
+        <ul>
+            <li><a href="https://github.com/flam3yx"><img src="images/github-brands-solid-full.svg"class="social-icon"></a></li>
+            <li><a href="https://www.linkedin.com/in/simone-lisa"><img src="images/linkedin-brands-solid-full.svg" class="social-icon"></a></li>
+            <li><a href="https://www.facebook.com/profile.php?id=61584121463256"><img src="images/facebook-brands-solid-full.svg" class="social-icon"></a></li>
+            <li><a href=""><img src="images/instagram-brands-solid-full.svg" class="social-icon"></a></li>
+        </ul>
+        <p>©2025 Simone Lisa - All rights reserved</p>
+    </footer>
 </body>
 </html>

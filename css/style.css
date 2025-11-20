@@ -1,21 +1,8 @@
-:root {
-    --primary: #3C3D37;
-    --secondary: #697565;
-    --background: #181C14;
-    --text: #ECDFCC;
-}
-
-.lightmode {
-    --primary: #D8D9D1;
-    --secondary: #A3AC9F;
-    --background: #F4F5F0;
-    --text: #2E2F27;
-}
-
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
+    font-family: "Lexend", sans-serif;
+    font-weight: 400;
     box-sizing: border-box;
 }
 
@@ -24,67 +11,56 @@ body {
     color: var(--text);
 }
 
-/*******************************************************************************************************/
-
-#theme-toggle {
-    width: 50px;
-    padding: 0;
-    border: none;
-    border-radius: 25%;
-    background-color: var(--primary);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-}
-
-#theme-toggle:hover {
-    background: var(--secondary);
-}
-
-#theme-toggle img:last-child {
-    display: none;
-}
-
-.lightmode #theme-toggle img:first-child {
-    display: none;
-}
-
-.lightmode #theme-toggle img:last-child {
-    display: block;
-}
-
-/*******************************************************************************************************/
-
 .nav-bar {
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 .nav-bar ul {
     display: flex;
     list-style: none;
-    padding: 0;
-    /*space inside the element (between border and content)*/
-    margin: 0;
-    /*space outside the element (separates it from others)*/
-    gap: 50px;
-    /*space between link in flex/grid*/
+    padding: 0; /*space inside the element (between border and content)*/
+    margin: 0; /*space outside the element (separates it from others)*/
+    gap: 50px; /*space between link in flex/grid*/
+    
 }
 
 .nav-bar a {
     text-decoration: none;
     color: var(--secondary);
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: .3s;
+    position: relative;
+    padding: 5px 0;
+    display: inline-block;
+}
+
+.nav-bar a span {
+    border-bottom: 2px solid var(--text);
+    transform: scale(0) translateY(50px);
+    opacity: 0;
+    transition: .3s;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 .nav-bar a:hover {
     color: var(--text);
+    transform: scale(1.1);
+}
+
+.nav-bar a:hover span {
+    transform: scale(1) translateY(0);
+    opacity: 1;
 }
 
 .projects {
@@ -144,6 +120,132 @@ body {
     height: 100%;
     border-radius: 20px;
 }
+
+/*******************************************************************************************************/
+/* CONTACT */
+
+.form {
+    height: 100vh;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background: var(--secondary);
+    padding: 50px;
+    border-radius: 20px;
+    min-width: 500px;
+    height: 600px;
+    box-shadow: -2px 2px 5px 0px var(--text);
+    gap: 20px;
+    transition: transform .5s, box-shadow .5s;
+}
+
+.contact-form:hover {
+    box-shadow: -5px 5px 5px 0px var(--text);
+    transform: translateY(-10px);
+}
+
+.contact-left h2 {
+    font-weight: 600;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.contact-left hr {
+    width: 80%;
+    height: 5px;
+    margin-left: 10%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background: var(--accent);
+}
+
+.contact-input {
+    border: 2px solid var(--secondary); /* invisible */
+    outline: 0;
+    border-radius: 10px;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 300;
+    width: 75%;
+    background: beige;
+}
+
+.contact-form textarea {
+    height: 150px;
+    padding-top: 15px;
+    border-radius: 10px;
+    resize: none;
+}
+
+.contact-input:focus {
+    border: 2px solid var(--accent);
+}
+
+.contact-input::placeholder {
+    color: var(--secondary);
+}
+
+#contact-btn {
+  font-size: 20px;
+  background: var(--accent);
+  color: #000;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+#contact-btn span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+#contact-btn img {
+  display: block;
+  transition: transform 0.3s ease-in-out;
+  width: 25px;
+}
+
+#contact-btn:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+#contact-btn:hover img {
+  transform: translateX(1.2em) rotate(45deg) scale(1.1);
+}
+
+#contact-btn:hover span {
+  transform: translateX(5em);
+}
+
+#contact-btn:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
 
 /*******************************************************************************************************/
 

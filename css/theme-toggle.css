@@ -1,0 +1,49 @@
+:root {
+    --primary: #3C3D37;
+    --secondary: #697565;
+    --background: #181C14;
+    --text: #ECDFCC;
+    --accent: #9BBF8A;
+    --extra: #C47A51;
+}
+
+.lightmode {
+    --primary: #D8D9D1;
+    --secondary: #A3AC9F;
+    --background: #F4F5F0;
+    --text: #2E2F27;
+    --accent: #7EA56A;
+    --extra: #D08C68;
+}
+
+
+#theme-toggle {
+    width: 40px;
+    padding: 4px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+#theme-toggle:hover {
+    background: var(--accent);
+}
+
+#theme-toggle img:last-child {
+    display: none;
+}
+
+.lightmode #theme-toggle img:first-child {
+    display: none;
+}
+
+.lightmode #theme-toggle img:last-child {
+    display: block;
+}
